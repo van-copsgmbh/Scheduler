@@ -46,16 +46,22 @@ namespace Corima.Scheduler
             foreach (var job in jobs)
             {
                 JobKey jobKey = new JobKey(job.Name, "group1");
-                if (await Scheduler.CheckExists(jobKey))
-                {
-                    break;
-                }
+                
+               
                 CorimaJob jobInstance = (CorimaJob)Activator.CreateInstance(job);
                 IJobDetail jobDetail = new JobDetailImpl(job.Name, "group1", job);
                 // IJobDetail jobDetail = JobBuilder.Create<JobProxy<CorimaJob>>()
                 //     .WithIdentity(job.Name, "group1")
                 //     .Build();
-                await Scheduler.ScheduleJob(jobDetail, jobInstance.Trigger);
+                if (await Scheduler.CheckExists(jobKey))
+                {
+                    await Scheduler.RescheduleJob(new TriggerKey(job.Name, "group1"), jobInstance.Trigger);
+                }
+                else
+                {
+                    await Scheduler.ScheduleJob(jobDetail, jobInstance.Trigger);
+                }
+                
             }
             
             await Builder.RunAsync();

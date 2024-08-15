@@ -18,6 +18,15 @@ namespace Corima
             // start job only at service startup, only one run and then never again,  
             // manual restart
             // prioritization of jobs - if it takes a long time, it's stuck the queue
+            
+            
+            
+            // how to delete job (from code and database)?
+            //-------------------------------------------------
+            // must be checked if the job is already registered (loaded from database). How to change job/delete job?
+            // 1. whenever the server is started, we can delete all job and register again
+            // 2. for update job we can use RescheduleJob (https://stackoverflow.com/a/76948032/6157936)
+            // exception is throwed when job exists in database, but not in code
 
             var services = CreateServices();
             services.GetRequiredService<MyService>().Save();
