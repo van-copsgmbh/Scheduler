@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Corima.Scheduler.Shared;
 using Corima.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Quartz;
 using Quartz.Impl;
+using Quartz.Impl.AdoJobStore;
+using Quartz.Impl.AdoJobStore.Common;
 using TreasuryBrowser;
 
 namespace Corima.Scheduler
@@ -21,6 +29,7 @@ namespace Corima.Scheduler
         {
             Builder = GetBuilder();
             Scheduler = await GetScheduler(Builder);
+            
             
             // IEnumerable<Type> jobs = FindJobs();
             //
@@ -36,12 +45,16 @@ namespace Corima.Scheduler
 
             foreach (var job in jobs)
             {
+                JobKey jobKey = new JobKey(job.Name, "group1");
+                if (await Scheduler.CheckExists(jobKey))
+                {
+                    break;
+                }
                 CorimaJob jobInstance = (CorimaJob)Activator.CreateInstance(job);
-                
-                IJobDetail jobDetail = JobBuilder.Create<JobProxy<CorimaJob>>()
-                    .WithIdentity(job.Name, "group1")
-                    .Build();
-                jobDetail.JobDataMap.Put("JobInstance", jobInstance);
+                IJobDetail jobDetail = new JobDetailImpl(job.Name, "group1", job);
+                // IJobDetail jobDetail = JobBuilder.Create<JobProxy<CorimaJob>>()
+                //     .WithIdentity(job.Name, "group1")
+                //     .Build();
                 await Scheduler.ScheduleJob(jobDetail, jobInstance.Trigger);
             }
             
@@ -56,7 +69,22 @@ namespace Corima.Scheduler
                     services.AddQuartz(q =>
                     {
                         q.UseMicrosoftDependencyInjectionJobFactory();
+                        q.UsePersistentStore(x =>
+                        {
+                            x.UseSqlServer(sql =>
+                            {
+                                sql.ConnectionString =
+                                    "Data Source=CZNBHOME7;Database=quartz;Integrated Security=false;User ID=quartz_user;Password=123456;";
+                                sql.ConnectionStringName = "Quartz";
+                                sql.UseDriverDelegate<SqlServerDelegate>();
+                                sql.UseConnectionProvider<CustomSqlServerConnectionProvider>();   
+                            }, "MSSQLSQLSERVER");
+                            x.UseProperties = false;
+                            x.UseSystemTextJsonSerializer();
+                        });
+                        
                     });
+                    
                     services.AddQuartzHostedService(opt =>
                     {
                         opt.WaitForJobsToComplete = true;
@@ -68,6 +96,7 @@ namespace Corima.Scheduler
 
         private async Task<IScheduler> GetScheduler(IHost builder)
         {
+            
             var schedulerFactory = builder.Services.GetRequiredService<ISchedulerFactory>(); 
             var scheduler = await schedulerFactory.GetScheduler();
              scheduler.ListenerManager.AddJobListener(new JobListener());
@@ -123,6 +152,55 @@ namespace Corima.Scheduler
             var result = job.Execute(context);
             // _repositoryService.Save("JOB ENDED");
             return result;
+        }
+    }
+    
+    public class CustomSqlServerConnectionProvider : IDbProvider
+    {
+        public CustomSqlServerConnectionProvider()
+        {
+            Metadata = new DbMetadata
+            {
+                AssemblyName = typeof(SqlConnection).AssemblyQualifiedName,
+                BindByName = true,
+                CommandType = typeof(SqlCommand),
+                ConnectionType = typeof(SqlConnection),
+                DbBinaryTypeName = "VarBinary",
+                ExceptionType = typeof(SqlException),
+                ParameterDbType = typeof(SqlDbType),
+                ParameterDbTypePropertyName = "SqlDbType",
+                ParameterNamePrefix = "@",
+                ParameterType = typeof(SqlParameter),
+                UseParameterNamePrefixInParameterCollection = true
+            };
+            Metadata.Init();
+        }
+
+        public void Initialize()
+        {
+        }
+
+        public DbCommand CreateCommand()
+        {
+            return new SqlCommand();
+        }
+
+        public DbConnection CreateConnection()
+        {
+            return new SqlConnection(ConnectionString);
+        }
+
+        public string ConnectionString
+        {
+            get =>
+                "Data Source=CZNBHOME7;Database=quartz;Integrated Security=false;User ID=quartz_user;Password=123456;";
+            set => throw new NotImplementedException();
+        }
+
+        public DbMetadata Metadata { get; }
+
+        public void Shutdown()
+        {
         }
     }
 }
