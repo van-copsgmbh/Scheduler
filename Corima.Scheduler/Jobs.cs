@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Corima.Scheduler.Shared;
 using Quartz;
@@ -8,7 +9,7 @@ namespace Corima.Scheduler
     [PersistJobDataAfterExecution]
     class FirstJob : CorimaJob
     {
-        public ITrigger Trigger { get; } = new Triggers().RepeatedTrigger("FirstJObTrigger", 1);
+        public ITrigger Trigger { get; } = new Triggers().RepeatedTrigger("FirstJobTrigger", 10);
         
         private static int count = 0;
     
@@ -27,7 +28,7 @@ namespace Corima.Scheduler
     class OneTimeJob : CorimaJob
     {
         
-        public ITrigger Trigger { get; } = new Triggers().OneTimeTrigger("OneTimeJob");
+        public ITrigger Trigger { get; } = new Triggers().OneTimeTrigger("OneTimeJobTrigger");
         private static int count = 0;
     
         // public int Value1 { private get; set; } = 0;
@@ -42,23 +43,23 @@ namespace Corima.Scheduler
     }
     
     
-    // [DisallowConcurrentExecution]
-    // class LongJob : CorimaJob
-    // {
-    //     public ITrigger Trigger { get; } = new Triggers().RepeatedTrigger("LongJob", 5);
-    //     
-    //     private static int count = 0;
-    //
-    //     // public int Value1 { private get; set; } = 0;
-    //
-    //     public async Task Execute(IJobExecutionContext context)
-    //     {
-    //         count++;
-    //         Console.WriteLine($"Long Job running [{count}]: ");
-    //         await Task.Delay(20000);
-    //     }
-    // }
-    //
+    [DisallowConcurrentExecution]
+    class LongJob : CorimaJob
+    {
+        public ITrigger Trigger { get; } = new Triggers().RepeatedTrigger("LongJob", 10);
+        
+        private static int count = 0;
+    
+        // public int Value1 { private get; set; } = 0;
+    
+        public async Task Execute(IJobExecutionContext context)
+        {
+            count++;
+            Console.WriteLine($"Long Job running [{count}]: ");
+            await Task.Delay(20000);
+        }
+    }
+    
     // [PersistJobDataAfterExecution]
     // class BJob : CorimaJob
     // {

@@ -17,6 +17,7 @@ using Quartz;
 using Quartz.Impl;
 using Quartz.Impl.AdoJobStore;
 using Quartz.Impl.AdoJobStore.Common;
+using Quartzmin;
 using TreasuryBrowser;
 
 namespace Corima.Scheduler
@@ -55,7 +56,7 @@ namespace Corima.Scheduler
                 //     .Build();
                 if (await Scheduler.CheckExists(jobKey))
                 {
-                    await Scheduler.RescheduleJob(new TriggerKey(job.Name, "group1"), jobInstance.Trigger);
+                    await Scheduler.RescheduleJob(new TriggerKey(jobInstance.Trigger.Key.Name, "group1"), jobInstance.Trigger);
                 }
                 else
                 {
@@ -64,7 +65,7 @@ namespace Corima.Scheduler
                 
             }
             
-            await Builder.RunAsync();
+            Builder.Run();
         }
 
         private IHost GetBuilder()

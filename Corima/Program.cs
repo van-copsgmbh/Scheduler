@@ -1,14 +1,53 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Corima.Scheduler;
 using Corima.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;
+using Quartz.Impl;
 using TreasuryBrowser;
 
 namespace Corima
 {
+    class Command
+    {
+        private JobScenarios _scenarios;
+
+        public Command(IScheduler scheduler)
+        {
+            _scenarios = new JobScenarios(scheduler);
+        }
+        
+        public async Task Run(string commandString)
+        {
+            string[] parts = commandString.Split(new[] {' '}, 2);
+            string command = parts[0];
+            string[] args = parts[1].Split(new[]{','}).Select(x => x.Trim()).ToArray();
+
+            if (Regex.IsMatch(commandString, @"^run\s\w+$"))
+            {
+                await _scenarios.RunJobManually(args[0]);
+                return;
+            }
+
+            if (Regex.IsMatch(commandString, @"run\s\w+,\s\d+"))
+            {
+                await _scenarios.RunJobManyTimes(args[0], int.Parse(args[1]));
+                return;
+            }
+
+            if (Regex.IsMatch(commandString, @"run-safe\s\w+,\s\d+"))
+            {
+                await _scenarios.PreventMultipleStarts(args[0], int.Parse(args[1]));
+                return;
+            }
+
+            Console.WriteLine("Unknown command");
+        }
+    }
     internal class Program
     {
         public static async Task Main(string[] args)
@@ -28,39 +67,28 @@ namespace Corima
             // 2. for update job we can use RescheduleJob (https://stackoverflow.com/a/76948032/6157936)
             // exception is throwed when job exists in database, but not in code
 
+            
+            //COMMANDS
+            //------------------------
+            // run JOBNAME
+            // run JOBNAME, COUNT - run specified job COUNT times
+            // run-safe JOBNAME, COUNT - prevent to multiple runs earlier than the scheduled start time
+            
+            
             var services = CreateServices();
             services.GetRequiredService<MyService>().Save();
             new tb();
             var scheduler = new JobScheduler();
             scheduler.Init();
-            
-            
-            string command = Console.ReadLine();
-            if ( command == "A")
-            {
-                var x = (await scheduler.Scheduler.GetCurrentlyExecutingJobs()).ToList();
-                ITrigger trigger = await scheduler.Scheduler.GetTrigger(new TriggerKey("OneTimeJob", "group1"));
-                
-                // await scheduler.Scheduler.RescheduleJob(new TriggerKey("OneTimeJob", "group1"), 
-                //     new Scheduler.Shared.Triggers().OneTimeTrigger("OneTimeJob2"));
-                await scheduler.Scheduler.TriggerJob(new JobKey("A", "group1"));
-                Console.WriteLine("OK");
-            }
+            StdSchedulerFactory.GetDefaultScheduler().Result.Start();
 
-            if (command == "S")
+            string command = "";
+            string exitKey = "x";
+            while ((command = Console.ReadLine().ToLower()) != exitKey)
             {
-                var jobs = await scheduler.Scheduler.GetCurrentlyExecutingJobs();
-                foreach (var j in jobs)
-                {
-                    Console.WriteLine($"STOPPING {j.JobDetail.Key.Name}");
-                    scheduler.Scheduler.Interrupt((j.JobDetail.Key));
-                    scheduler.Scheduler.UnscheduleJob((j.Trigger.Key));
-                    scheduler.Scheduler.DeleteJob(j.JobDetail.Key);
-                }
-
-                scheduler.Scheduler.Clear();
+                var cmd = new Command(scheduler.Scheduler);
+                await cmd.Run(command);
             }
-                
             Console.ReadLine();
         }
         
