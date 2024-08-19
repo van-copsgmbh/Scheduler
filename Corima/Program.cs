@@ -70,7 +70,7 @@ namespace Corima
             
             //COMMANDS
             //------------------------
-            // run JOBNAME
+            // run JOBNAME - doesnt work for one-time jobs
             // run JOBNAME, COUNT - run specified job COUNT times
             // run-safe JOBNAME, COUNT - prevent to multiple runs earlier than the scheduled start time
             
