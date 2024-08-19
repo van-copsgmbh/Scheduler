@@ -119,6 +119,7 @@ namespace Corima.Scheduler
         }
     }
     
+    //can be used for logging
     class JobListener : IJobListener
     {
         public Task JobToBeExecuted(IJobExecutionContext context, CancellationToken cancellationToken = new CancellationToken())
@@ -143,6 +144,7 @@ namespace Corima.Scheduler
         public string Name { get; } = "LISTENER";
     }
 
+    //can be used for logging, for only one-time-running jobs
     class JobProxy<T> : IJob where T : CorimaJob
     {
         private readonly RepositoryService _repositoryService;
