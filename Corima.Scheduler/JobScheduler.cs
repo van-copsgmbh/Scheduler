@@ -19,6 +19,7 @@ using Quartz.Impl.AdoJobStore;
 using Quartz.Impl.AdoJobStore.Common;
 using Quartzmin;
 using TreasuryBrowser;
+using System.Configuration;
 
 namespace Corima.Scheduler
 {
@@ -63,8 +64,6 @@ namespace Corima.Scheduler
                         {
                             x.UseSqlServer(sql =>
                             {
-                                sql.ConnectionString =
-                                    "Data Source=CZNBHOME7;Database=quartz;Integrated Security=false;User ID=quartz_user;Password=123456;";
                                 sql.ConnectionStringName = "Quartz";
                                 sql.UseDriverDelegate<SqlServerDelegate>();
                                 sql.UseConnectionProvider<CustomSqlServerConnectionProvider>();
@@ -181,9 +180,8 @@ namespace Corima.Scheduler
 
         public string ConnectionString
         {
-            get =>
-                "Data Source=CZNBHOME7;Database=quartz;Integrated Security=false;User ID=quartz_user;Password=123456;";
-            set => throw new NotImplementedException();
+            get => System.Configuration.ConfigurationManager.ConnectionStrings["MSSQL_ConnectionString"].ConnectionString;
+            set => System.Configuration.ConfigurationManager.ConnectionStrings["MSSQL_ConnectionString"].ConnectionString = value;
         }
 
         public DbMetadata Metadata { get; }
