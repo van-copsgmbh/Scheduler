@@ -31,29 +31,13 @@ namespace Corima.Scheduler
             Builder = GetBuilder();
             Scheduler = await GetScheduler(Builder);
             
-            
-            // IEnumerable<Type> jobs = FindJobs();
-            //
-            // foreach (var job in jobs)
-            // {
-            //     IJobDetail jobDetail = new JobDetailImpl(job.ToString(), "group1", job);
-            //     
-            //     var t = ((CorimaJob)Activator.CreateInstance(job)).Trigger;
-            //     await Scheduler.ScheduleJob(jobDetail, t);
-            // }
-            
             IEnumerable<Type> jobs = FindJobs();
 
             foreach (var job in jobs)
             {
                 JobKey jobKey = new JobKey(job.Name, "group1");
-                
-               
                 CorimaJob jobInstance = (CorimaJob)Activator.CreateInstance(job);
                 IJobDetail jobDetail = new JobDetailImpl(job.Name, "group1", job);
-                // IJobDetail jobDetail = JobBuilder.Create<JobProxy<CorimaJob>>()
-                //     .WithIdentity(job.Name, "group1")
-                //     .Build();
                 if (await Scheduler.CheckExists(jobKey))
                 {
                     await Scheduler.RescheduleJob(new TriggerKey(jobInstance.Trigger.Key.Name, "group1"), jobInstance.Trigger);
@@ -62,7 +46,6 @@ namespace Corima.Scheduler
                 {
                     await Scheduler.ScheduleJob(jobDetail, jobInstance.Trigger);
                 }
-                
             }
             
             Scheduler.Start();
@@ -102,11 +85,8 @@ namespace Corima.Scheduler
 
         private async Task<IScheduler> GetScheduler(IHost builder)
         {
-            
-            // var schedulerFactory = builder.Services.GetRequiredService<ISchedulerFactory>(); 
-            // var scheduler = await schedulerFactory.GetScheduler();
-            var scheduler = await StdSchedulerFactory.GetDefaultScheduler();
-            scheduler.ListenerManager.AddJobListener(new JobListener());
+            var schedulerFactory = builder.Services.GetRequiredService<ISchedulerFactory>(); 
+            var scheduler = await schedulerFactory.GetScheduler();
             return scheduler;
         }
         

@@ -16,12 +16,12 @@ namespace Corima
 
         public async Task RunNewJob()
         {
-            var job = JobBuilder.Create<X>()
-                .WithIdentity("XXX", "group")
+            var job = JobBuilder.Create<RuntimeJob>()
+                .WithIdentity("NewJob", "group1")
                 .Build();
 
             var trigger = TriggerBuilder.Create()
-                .WithIdentity("XXX", "group")
+                .WithIdentity("NewJob", "group1")
                 .StartNow()
                 .Build();
 
@@ -59,11 +59,11 @@ namespace Corima
         }
     }
 
-    class X : IJob
+    class RuntimeJob : IJob
     {
         public Task Execute(IJobExecutionContext context)
         {
-            Console.WriteLine("NEW JOB***********");
+            Console.WriteLine("RuntimeJob running...");
             
             return Task.CompletedTask;
         }
