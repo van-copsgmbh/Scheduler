@@ -45,6 +45,12 @@ namespace Corima
                 return;
             }
 
+            if (commandString == "new x")
+            {
+                await _scenarios.RunNewJob();
+                return;
+            }
+
             Console.WriteLine("Unknown command");
         }
     }

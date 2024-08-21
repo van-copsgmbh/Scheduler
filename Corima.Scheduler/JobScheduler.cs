@@ -65,7 +65,7 @@ namespace Corima.Scheduler
                 
             }
             
-            Builder.Run();
+            Scheduler.Start();
         }
 
         private IHost GetBuilder()
@@ -84,12 +84,11 @@ namespace Corima.Scheduler
                                     "Data Source=CZNBHOME7;Database=quartz;Integrated Security=false;User ID=quartz_user;Password=123456;";
                                 sql.ConnectionStringName = "Quartz";
                                 sql.UseDriverDelegate<SqlServerDelegate>();
-                                sql.UseConnectionProvider<CustomSqlServerConnectionProvider>();   
+                                sql.UseConnectionProvider<CustomSqlServerConnectionProvider>();
                             }, "MSSQLSQLSERVER");
                             x.UseProperties = false;
                             x.UseSystemTextJsonSerializer();
                         });
-                        
                     });
                     
                     services.AddQuartzHostedService(opt =>
@@ -104,9 +103,10 @@ namespace Corima.Scheduler
         private async Task<IScheduler> GetScheduler(IHost builder)
         {
             
-            var schedulerFactory = builder.Services.GetRequiredService<ISchedulerFactory>(); 
-            var scheduler = await schedulerFactory.GetScheduler();
-             scheduler.ListenerManager.AddJobListener(new JobListener());
+            // var schedulerFactory = builder.Services.GetRequiredService<ISchedulerFactory>(); 
+            // var scheduler = await schedulerFactory.GetScheduler();
+            var scheduler = await StdSchedulerFactory.GetDefaultScheduler();
+            scheduler.ListenerManager.AddJobListener(new JobListener());
             return scheduler;
         }
         

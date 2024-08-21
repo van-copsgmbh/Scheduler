@@ -1,6 +1,0 @@
-C:\Users\van\Projects\Scheduler\Corima.Services\bin\Debug\Corima.Services.dll
-C:\Users\van\Projects\Scheduler\Corima.Services\bin\Debug\Corima.Services.pdb
-C:\Users\van\Projects\Scheduler\Corima.Services\obj\Debug\Corima.Services.csproj.AssemblyReference.cache
-C:\Users\van\Projects\Scheduler\Corima.Services\obj\Debug\Corima.Services.csproj.CoreCompileInputs.cache
-C:\Users\van\Projects\Scheduler\Corima.Services\obj\Debug\Corima.Services.dll
-C:\Users\van\Projects\Scheduler\Corima.Services\obj\Debug\Corima.Services.pdb

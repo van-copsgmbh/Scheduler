@@ -13,6 +13,21 @@ namespace Corima
         {
             _scheduler = scheduler;
         }
+
+        public async Task RunNewJob()
+        {
+            var job = JobBuilder.Create<X>()
+                .WithIdentity("XXX", "group")
+                .Build();
+
+            var trigger = TriggerBuilder.Create()
+                .WithIdentity("XXX", "group")
+                .StartNow()
+                .Build();
+
+            await _scheduler.ScheduleJob(job, trigger);
+        }
+        
         public async Task RunJobManually(string jobName)
         {
             ITrigger trigger = await GetTrigger(jobName);
@@ -41,6 +56,16 @@ namespace Corima
         private async Task<ITrigger> GetTrigger(string jobName)
         {
             return await _scheduler.GetTrigger(new TriggerKey($"{jobName}Trigger", "group1"));
+        }
+    }
+
+    class X : IJob
+    {
+        public Task Execute(IJobExecutionContext context)
+        {
+            Console.WriteLine("NEW JOB***********");
+            
+            return Task.CompletedTask;
         }
     }
 }

@@ -7,7 +7,312 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9be2d6-e9e4-4a99-b7a3-2ceac04e8443" name="Changes" comment="" />
+    <list default="true" id="5d9be2d6-e9e4-4a99-b7a3-2ceac04e8443" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scheduler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scheduler/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Corima.Scheduler.Shared.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Corima.Scheduler.Shared.dll.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Corima.Scheduler.Shared.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Microsoft.Bcl.AsyncInterfaces.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Microsoft.Extensions.DependencyInjection.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Microsoft.Extensions.Logging.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Quartz.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/Quartz.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Buffers.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Buffers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Diagnostics.DiagnosticSource.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Memory.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Memory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Numerics.Vectors.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Numerics.Vectors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Runtime.CompilerServices.Unsafe.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Runtime.CompilerServices.Unsafe.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/bin/Debug/System.Threading.Tasks.Extensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/obj/Debug/Corima.S.3C51CBDB.Up2Date" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/obj/Debug/Corima.Scheduler.Shared.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/obj/Debug/Corima.Scheduler.Shared.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/obj/Debug/Corima.Scheduler.Shared.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/obj/Debug/Corima.Scheduler.Shared.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler.Shared/obj/Debug/Corima.Scheduler.Shared.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/JobScheduler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Corima.Scheduler/JobScheduler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Corima.Scheduler.Shared.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Corima.Scheduler.Shared.dll.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Corima.Scheduler.Shared.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Corima.Scheduler.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Corima.Scheduler.dll.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Corima.Scheduler.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Corima.Services.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Corima.Services.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Bcl.AsyncInterfaces.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.Binder.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.CommandLine.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.CommandLine.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.EnvironmentVariables.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.EnvironmentVariables.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.FileExtensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.FileExtensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.Json.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.UserSecrets.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.UserSecrets.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.DependencyInjection.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.DependencyInjection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Diagnostics.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Diagnostics.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Diagnostics.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Diagnostics.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.FileProviders.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.FileProviders.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.FileProviders.Physical.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.FileProviders.Physical.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.FileSystemGlobbing.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.FileSystemGlobbing.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Hosting.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Hosting.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Hosting.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Hosting.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.Configuration.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.Configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.Console.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.Console.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.Debug.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.Debug.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.EventLog.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.EventLog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.EventSource.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.EventSource.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Logging.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Options.ConfigurationExtensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Options.ConfigurationExtensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Options.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Options.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Primitives.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Microsoft.Extensions.Primitives.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Quartz.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Quartz.Extensions.DependencyInjection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Quartz.Extensions.Hosting.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Quartz.Extensions.Hosting.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Quartz.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/Quartz.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Buffers.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Buffers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Diagnostics.DiagnosticSource.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.IO.Pipelines.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.IO.Pipelines.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Memory.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Memory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Numerics.Vectors.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Numerics.Vectors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Runtime.CompilerServices.Unsafe.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Runtime.CompilerServices.Unsafe.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Text.Encodings.Web.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Text.Encodings.Web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Text.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Text.Json.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.Threading.Tasks.Extensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.ValueTuple.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/System.ValueTuple.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/TreasuryBrowser.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/TreasuryBrowser.dll.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/bin/Debug/TreasuryBrowser.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/obj/Debug/Corima.S.87EE5255.Up2Date" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/obj/Debug/Corima.Scheduler.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/obj/Debug/Corima.Scheduler.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/obj/Debug/Corima.Scheduler.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/obj/Debug/Corima.Scheduler.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/obj/Debug/Corima.Scheduler.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Scheduler/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/Corima.Scheduler/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Services/bin/Debug/Corima.Services.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Services/bin/Debug/Corima.Services.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Services/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Services/obj/Debug/Corima.Services.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Services/obj/Debug/Corima.Services.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Services/obj/Debug/Corima.Services.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Services/obj/Debug/Corima.Services.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima.Services/obj/Debug/Corima.Services.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/JobScenarios.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Corima/JobScenarios.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Corima/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.Scheduler.Shared.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.Scheduler.Shared.dll.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.Scheduler.Shared.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.Scheduler.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.Scheduler.dll.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.Scheduler.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.Services.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.Services.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.exe.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Corima.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Bcl.AsyncInterfaces.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.Binder.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.CommandLine.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.CommandLine.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.EnvironmentVariables.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.EnvironmentVariables.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.FileExtensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.FileExtensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.Json.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.UserSecrets.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.UserSecrets.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.DependencyInjection.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.DependencyInjection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Diagnostics.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Diagnostics.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Diagnostics.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Diagnostics.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.FileProviders.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.FileProviders.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.FileProviders.Physical.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.FileProviders.Physical.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.FileSystemGlobbing.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.FileSystemGlobbing.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Hosting.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Hosting.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Hosting.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Hosting.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.Configuration.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.Configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.Console.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.Console.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.Debug.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.Debug.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.EventLog.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.EventLog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.EventSource.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.EventSource.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Logging.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Options.ConfigurationExtensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Options.ConfigurationExtensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Options.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Options.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Primitives.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Microsoft.Extensions.Primitives.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Quartz.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Quartz.Extensions.DependencyInjection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Quartz.Extensions.Hosting.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Quartz.Extensions.Hosting.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Quartz.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/Quartz.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Buffers.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Buffers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Diagnostics.DiagnosticSource.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.IO.Pipelines.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.IO.Pipelines.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Memory.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Memory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Numerics.Vectors.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Runtime.CompilerServices.Unsafe.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Runtime.CompilerServices.Unsafe.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Text.Encodings.Web.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Text.Encodings.Web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Text.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Text.Json.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.Threading.Tasks.Extensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.ValueTuple.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/System.ValueTuple.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/TreasuryBrowser.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/TreasuryBrowser.dll.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/bin/Debug/TreasuryBrowser.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/obj/Debug/Corima.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/obj/Debug/Corima.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/obj/Debug/Corima.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/obj/Debug/Corima.csproj.Up2Date" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/obj/Debug/Corima.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/obj/Debug/Corima.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Corima/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/Corima/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scheduler.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Scheduler.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Corima.Scheduler.Shared.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Corima.Scheduler.Shared.dll.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Corima.Scheduler.Shared.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Microsoft.Bcl.AsyncInterfaces.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Microsoft.Extensions.DependencyInjection.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Microsoft.Extensions.Logging.Abstractions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Quartz.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/Quartz.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Buffers.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Buffers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Diagnostics.DiagnosticSource.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Memory.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Memory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Numerics.Vectors.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Numerics.Vectors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Runtime.CompilerServices.Unsafe.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Runtime.CompilerServices.Unsafe.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/System.Threading.Tasks.Extensions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/TreasuryBrowser.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/TreasuryBrowser.dll.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/bin/Debug/TreasuryBrowser.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/obj/Debug/Treasury.FC22F9A5.Up2Date" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/obj/Debug/TreasuryBrowser.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/obj/Debug/TreasuryBrowser.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/obj/Debug/TreasuryBrowser.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/obj/Debug/TreasuryBrowser.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreasuryBrowser/obj/Debug/TreasuryBrowser.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/Quartz.3.12.0.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/lib/net462/Quartz.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/lib/net462/Quartz.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/lib/net472/Quartz.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/lib/net472/Quartz.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/lib/net6.0/Quartz.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/lib/net6.0/Quartz.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/lib/netstandard2.0/Quartz.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/lib/netstandard2.0/Quartz.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/quartz-logo-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.3.12.0/quick-start.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/Quartz.Extensions.DependencyInjection.3.12.0.nupkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/lib/net6.0/Quartz.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/lib/net6.0/Quartz.Extensions.DependencyInjection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/lib/net8.0/Quartz.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/lib/net8.0/Quartz.Extensions.DependencyInjection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/lib/netcoreapp3.1/Quartz.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/lib/netcoreapp3.1/Quartz.Extensions.DependencyInjection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/lib/netstandard2.0/Quartz.Extensions.DependencyInjection.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/lib/netstandard2.0/Quartz.Extensions.DependencyInjection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/microsoft-di-integration.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/Quartz.Extensions.DependencyInjection.3.12.0/quartz-logo-small.png" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,23 +321,48 @@
   <component name="DpaMonitoringSettings">
     <option name="autoShow" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;van-copsgmbh&quot;
+  }
+}</component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="a4707141-a569-4b89-8694-c0baef9c6ff9" />
   </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/van-copsgmbh/Scheduler.git&quot;,
+    &quot;accountId&quot;: &quot;a4707141-a569-4b89-8694-c0baef9c6ff9&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7ff4597333a544bc9923788716880fcc572e20/57/fb36a315/NullReferenceException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7ff4597333a544bc9923788716880fcc572e20/76/5bbb9079/TaskAwaiter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7ff4597333a544bc9923788716880fcc572e20/c0/829d417c/Dictionary`2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7ff4597333a544bc9923788716880fcc572e20/cd/c4b1af02/RuntimeMethodInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8bcd64179d0f4cb297ad5fb905442a36531020/39/a52913c0/MemberInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8bcd64179d0f4cb297ad5fb905442a36531020/8f/366b2e33/Type.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e7dfddd6f65046c28f22b1a398ea31d4ecc00/93/93f00d87/JobDetailImpl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/caababd3b5d8465ca83f801d78db5b84ecc00/0f/3f1a70c9/Quartz.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b463c128d2805e29d3588d86c6cc583c5b15797bb90f156b8666987314/IListenerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2a68cd46f5de568ff0cfe543f5c548a7b22e378c3275734442afde6b0f73258/HostBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/397d728f118e9f475e8cab9d2fc411db7577156d49a77e8622751aeab7d3ab2/TriggerKey.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f7928ea90e69336931ee773cd8c15e22960ad505897569f9047e4afcc776cc/JobRunShell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647351d2dafb173071f91c33b017d812817a0e398faa562b5310338280272/IScheduler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8760d271655477514f2e23dd6c31e7ab69ba3d29abeffbfdb6fbb140c9e29/StdSchedulerFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8f1e557766f7f172f4efba10e338b809188411bf83a4b9b941a6ec4dd8c7d/ISchedulerFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/90bf9ac51b760d05d7e33d5306b3499ff3132dbb33490fd972f778663cce0fc/IJob.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9b5bde2a4e87e7b1db77a346b595624e87d1a88c7ae5895246db67ca226e/IDbProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b1ee4cb1ce5cd1232baee8d923fdc971cb5e4c4a46a341ea639a187a1a18fb6/JobDetailImpl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b79f7de9c9193e5aad5265d462ee3e9fd664d874542062e8a4090343cb112/JobBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e9488ae2a81d6578458be1a9dc854669cb82f47fbcd1dfa91111934b7e7a/Key.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ec9fbca2c2583622a8c568c1dc3e610cef2d968db5e570538b3cc657b5e042/SchedulerBuilder.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -41,19 +371,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.Corima.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.Corima.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Corima" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -87,56 +418,127 @@
       <workItem from="1723090848348" duration="246000" />
       <workItem from="1723091560659" duration="15474000" />
       <workItem from="1723534881134" duration="7964000" />
+      <workItem from="1723560623579" duration="28115000" />
+      <workItem from="1723705995960" duration="2176000" />
+      <workItem from="1723721686005" duration="11109000" />
+      <workItem from="1723786910163" duration="5073000" />
+      <workItem from="1723792021800" duration="17965000" />
+      <workItem from="1724218239414" duration="878000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1723560948649</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723560948649</updated>
+    </task>
+    <task id="LOCAL-00002" summary="connect Quartz.NET to MSSQL database">
+      <option name="closed" value="true" />
+      <created>1723696795113</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723696795113</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update job">
+      <option name="closed" value="true" />
+      <created>1723704225917</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723704225917</updated>
+    </task>
+    <task id="LOCAL-00004" summary="run jobs manually">
+      <option name="closed" value="true" />
+      <created>1724042580757</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1724042580758</updated>
+    </task>
+    <task id="LOCAL-00005" summary="comments">
+      <option name="closed" value="true" />
+      <created>1724042759454</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724042759454</updated>
+    </task>
+    <task id="LOCAL-00006" summary="comments">
+      <option name="closed" value="true" />
+      <created>1724043009390</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1724043009390</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="connect Quartz.NET to MSSQL database" />
+    <MESSAGE value="update job" />
+    <MESSAGE value="run jobs manually" />
+    <MESSAGE value="comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Corima/Program.cs</url>
-          <line>36</line>
-          <properties documentPath="C:\Users\van\Projects\Scheduler\Corima\Program.cs" containingFunctionPresentation="Method 'Main'">
+          <url>file://$PROJECT_DIR$/Corima/JobScenarios.cs</url>
+          <line>32</line>
+          <properties documentPath="C:\Users\van\Projects\Scheduler\Corima\JobScenarios.cs" containingFunctionPresentation="Method 'RunJobManually'">
             <startOffsets>
-              <option value="1341" />
+              <option value="755" />
             </startOffsets>
             <endOffsets>
-              <option value="1405" />
+              <option value="800" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Corima.Scheduler/JobScheduler.cs</url>
-          <line>38</line>
-          <properties documentPath="C:\Users\van\Projects\Scheduler\Corima.Scheduler\JobScheduler.cs" containingFunctionPresentation="Method 'Init'">
+          <url>file://$PROJECT_DIR$/Corima/JobScenarios.cs</url>
+          <line>51</line>
+          <properties documentPath="C:\Users\van\Projects\Scheduler\Corima\JobScenarios.cs" containingFunctionPresentation="Method 'PreventMultipleStarts'">
             <startOffsets>
-              <option value="1145" />
+              <option value="1413" />
             </startOffsets>
             <endOffsets>
-              <option value="1210" />
+              <option value="1457" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Corima/JobScenarios.cs</url>
+          <line>47</line>
+          <properties documentPath="C:\Users\van\Projects\Scheduler\Corima\JobScenarios.cs" containingFunctionPresentation="Method 'PreventMultipleStarts'">
+            <startOffsets>
+              <option value="1271" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1316" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="DotNetProject">
-        <watch expression="AppDomain.CurrentDomain.GetAssemblies()" language="C#" />
-        <watch expression="System.Reflection.Assembly.GetExecutingAssembly(" language="C#" />
-        <watch expression="System.Reflection.Assembly.GetExecutingAssembly()" language="C#" />
-        <watch expression="Assembly.GetExecutingAssembly().GetReferencedAssemblies()" language="C#" />
-        <watch expression="System.Reflection.Assembly.GetExecutingAssembly().GetReferencedAssemblies()" language="C#" />
-      </configuration>
-    </watches-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#Quartz.Impl.StdScheduler" memberName="sched" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
