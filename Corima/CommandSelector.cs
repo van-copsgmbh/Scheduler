@@ -37,7 +37,13 @@ namespace Corima
             }
             
             string[] parts = splitCommand[0].Split(new[] { ' ' }, 2);
-            string[] args = parts[1].Split(new[] { ',' }).Select(x => x.Trim()).ToArray();
+            string[] args = new string[]{};
+            
+            if (parts.Length > 1)
+            {
+                args = parts[1].Split(new[] { ',' })?.Select(x => x.Trim()).ToArray();
+            }
+            
 
             if (Regex.IsMatch(splitCommand[0], @"^run\s\w+(\s)*$"))
             {
@@ -63,6 +69,12 @@ namespace Corima
                 return;
             }
 
+            if (commandString == "run-dependent")
+            {
+                await _scenarios.RunDependentJobs();
+                return;
+            }
+            
             Console.WriteLine("Unknown command");
         }
     }

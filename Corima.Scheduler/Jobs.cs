@@ -39,6 +39,7 @@ namespace Corima.Scheduler
     class LongJob : CorimaJob
     {
         public ITrigger Trigger { get; } = new Triggers().RepeatedTrigger("LongJob", 10);
+
         
         private static int count = 0;
         public async Task Execute(IJobExecutionContext context)

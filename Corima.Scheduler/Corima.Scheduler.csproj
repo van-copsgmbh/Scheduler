@@ -213,6 +213,7 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="DependentJobListener.cs" />
         <Compile Include="Jobs.cs" />
         <Compile Include="JobScheduler.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
