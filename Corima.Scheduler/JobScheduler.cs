@@ -68,7 +68,7 @@ namespace Corima.Scheduler
                                 sql.UseDriverDelegate<SqlServerDelegate>();
                                 sql.UseConnectionProvider<CustomSqlServerConnectionProvider>();
                             }, "MSSQLSQLSERVER");
-                            x.UseProperties = false;
+                            x.UseProperties = true;
                             x.UseSystemTextJsonSerializer();
                         });
                     });

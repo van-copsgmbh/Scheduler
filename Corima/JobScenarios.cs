@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Quartz;
 using TreasuryBrowser;
@@ -28,34 +29,44 @@ namespace Corima
             await _scheduler.ScheduleJob(job, trigger);
         }
         
-        public async Task RunJobManually(string jobName)
+        public async Task RunJobManually(string jobName, Dictionary<string, object> data)
         {
             ITrigger trigger = await GetTrigger(jobName);
-            await _scheduler.TriggerJob(trigger.JobKey);
+            await _scheduler.TriggerJob(trigger.JobKey, CreateDataMap(data));
         }
 
-        public async Task RunJobManyTimes(string jobName, int numberOfShots)
+        public async Task RunJobManyTimes(string jobName, int numberOfShots, Dictionary<string, object> data)
         {
             ITrigger trigger = await GetTrigger(jobName);
             for (int i = 0; i < numberOfShots; i++)
             {
-                await _scheduler.TriggerJob(trigger.JobKey);
+                await _scheduler.TriggerJob(trigger.JobKey, CreateDataMap(data));
             }
         }
 
-        public async Task PreventMultipleStarts(string jobName, int numberOfShots)
+        public async Task PreventMultipleStarts(string jobName, int numberOfShots, Dictionary<string, object> data)
         {
             ITrigger trigger = await GetTrigger(jobName);
 
             if (trigger.GetNextFireTimeUtc() <= DateTime.UtcNow)
             {
-                await _scheduler.TriggerJob(trigger.JobKey);
+                await _scheduler.TriggerJob(trigger.JobKey, CreateDataMap(data));
             }
         }
         
         private async Task<ITrigger> GetTrigger(string jobName)
         {
             return await _scheduler.GetTrigger(new TriggerKey($"{jobName}Trigger", "group1"));
+        }
+
+        private JobDataMap CreateDataMap(Dictionary<string, object> data)
+        {
+            var dataMap = new JobDataMap();
+            foreach (var pair in data)
+            {
+                dataMap.Add(pair.Key, pair.Value);
+            }
+            return dataMap;
         }
     }
 

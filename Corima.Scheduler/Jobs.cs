@@ -15,8 +15,8 @@ namespace Corima.Scheduler
         public Task Execute(IJobExecutionContext context)
         {
             count++;
+            var data = context.MergedJobDataMap;
             Console.WriteLine($"First Job running [{count}]: ");
-    
             return Task.CompletedTask;
         }
     }
