@@ -34,10 +34,10 @@ namespace Corima
             
             //COMMANDS
             //------------------------
-            // run JOBNAME - doesnt work for one-time jobs
-            // run JOBNAME, COUNT - run specified job COUNT times
-            // run-safe JOBNAME, COUNT - prevent to multiple runs earlier than the scheduled start time
-            
+            // run JOBNAME [-d key=value, key2=value] - doesnt work for one-time jobs
+            // run JOBNAME, COUNT [-d key=value, key2=value] - run specified job COUNT times
+            // run-safe JOBNAME, COUNT [-d key=value, key2=value] - prevent to multiple runs earlier than the scheduled start time
+            // run-dependent - run FirstJob and than OneTimeJob
             
             
             var services = CreateServices();
