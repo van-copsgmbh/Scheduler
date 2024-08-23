@@ -25,6 +25,13 @@ namespace Corima.Scheduler
 {
     public class JobScheduler
     {
+        private readonly ServiceProvider _serviceProvider;
+
+        public JobScheduler(ServiceProvider serviceProvider)
+        {
+            _serviceProvider = serviceProvider;
+        }
+
         public IScheduler Scheduler { get; set; }
         public IHost Builder { get; set; }
         public async Task Init()
@@ -37,7 +44,8 @@ namespace Corima.Scheduler
             foreach (var job in jobs)
             {
                 JobKey jobKey = new JobKey(job.Name, "group1");
-                CorimaJob jobInstance = (CorimaJob)Activator.CreateInstance(job);
+                // CorimaJob jobInstance = (CorimaJob)Activator.CreateInstance(job);
+                CorimaJob jobInstance = _serviceProvider.GetRequiredService(job) as CorimaJob;
                 IJobDetail jobDetail = new JobDetailImpl(job.Name, "group1", job);
                 if (await Scheduler.CheckExists(jobKey))
                 {

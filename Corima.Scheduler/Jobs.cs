@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Corima.Scheduler.Shared;
+using Corima.Services;
 using Quartz;
 
 namespace Corima.Scheduler
@@ -9,6 +10,11 @@ namespace Corima.Scheduler
     [PersistJobDataAfterExecution]
     class FirstJob : CorimaJob
     {
+        private readonly RepositoryService _repositoryService;
+        public FirstJob(RepositoryService repositoryService)
+        {
+            _repositoryService = repositoryService;
+        }
         public ITrigger Trigger { get; } = new Triggers().RepeatedTrigger("FirstJobTrigger", 10);
         
         private static int count = 0;

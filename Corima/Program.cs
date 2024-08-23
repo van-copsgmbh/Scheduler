@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Corima.Scheduler;
+using Corima.Scheduler.Shared;
 using Corima.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;
@@ -41,9 +42,9 @@ namespace Corima
             
             
             var services = CreateServices();
-            services.GetRequiredService<MyService>().Save();
+
             new tb();
-            var scheduler = new JobScheduler();
+            var scheduler = new JobScheduler(services);
             scheduler.Init();
             StdSchedulerFactory.GetDefaultScheduler().Result.Start();
 
@@ -59,12 +60,24 @@ namespace Corima
         
         private static ServiceProvider CreateServices()
         {
-            var serviceProvider = new ServiceCollection()
+            var serviceCollection = new ServiceCollection()
                 .AddSingleton<RepositoryService>()
-                .AddSingleton<MyService>()
-                .BuildServiceProvider();
+                .AddSingleton<MyService>();
 
-            return serviceProvider;
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            foreach (var assembly in assemblies)
+            {
+                // Najít typy implementující rozhraní IMyService
+                var types = assembly.GetTypes()
+                    .Where(t => typeof(CorimaJob).IsAssignableFrom(t) && !t.IsAbstract);
+
+                foreach (var type in types)
+                {
+                    serviceCollection.AddTransient(type, type);
+                }
+            }
+            
+            return serviceCollection.BuildServiceProvider();
         }
     }
 }
