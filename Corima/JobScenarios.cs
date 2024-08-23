@@ -83,7 +83,7 @@ namespace Corima
     {
         public Task Execute(IJobExecutionContext context)
         {
-            Console.WriteLine("RuntimeJob running...");
+            Console.WriteLine("RuntimeJob finished");
             
             return Task.CompletedTask;
         }

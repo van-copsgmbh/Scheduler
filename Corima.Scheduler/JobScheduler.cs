@@ -1,193 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Common;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
-using Corima.Scheduler.Shared;
-using Corima.Services;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+﻿using Corima.Scheduler.Shared;
 using Quartz;
-using Quartz.Impl;
-using Quartz.Impl.AdoJobStore;
-using Quartz.Impl.AdoJobStore.Common;
-using Quartzmin;
-using TreasuryBrowser;
-using System.Configuration;
+using System;
+using System.Threading.Tasks;
 
 namespace Corima.Scheduler
 {
-    public class JobScheduler
+    public class JobScheduler : IJobScheduler
     {
-        public IScheduler Scheduler { get; set; }
-        public IHost Builder { get; set; }
-        public async Task Init()
-        {
-            Builder = GetBuilder();
-            Scheduler = await GetScheduler(Builder);
-            
-            IEnumerable<Type> jobs = FindJobs();
+        private readonly ISchedulerFactory _schedulerFactory;
 
-            foreach (var job in jobs)
-            {
-                JobKey jobKey = new JobKey(job.Name, "group1");
-                CorimaJob jobInstance = (CorimaJob)Activator.CreateInstance(job);
-                IJobDetail jobDetail = new JobDetailImpl(job.Name, "group1", job);
-                if (await Scheduler.CheckExists(jobKey))
-                {
-                    await Scheduler.RescheduleJob(new TriggerKey(jobInstance.Trigger.Key.Name, "group1"), jobInstance.Trigger);
-                }
-                else
-                {
-                    await Scheduler.ScheduleJob(jobDetail, jobInstance.Trigger);
-                }
-            }
-            
-            Scheduler.Start();
+        public JobScheduler(ISchedulerFactory schedulerFactory)
+        {
+            this._schedulerFactory = schedulerFactory;
         }
 
-        private IHost GetBuilder()
+        public async Task QueueJob(JobKey jobKey)
         {
-            return Host.CreateDefaultBuilder()
-                .ConfigureServices((cxt, services) =>
-                {
-                    services.AddQuartz(q =>
-                    {
-                        q.UseMicrosoftDependencyInjectionJobFactory();
-                        q.UsePersistentStore(x =>
-                        {
-                            x.UseSqlServer(sql =>
-                            {
-                                sql.ConnectionStringName = "Quartz";
-                                sql.UseDriverDelegate<SqlServerDelegate>();
-                                sql.UseConnectionProvider<CustomSqlServerConnectionProvider>();
-                            }, "MSSQLSQLSERVER");
-                            x.UseProperties = true;
-                            x.UseSystemTextJsonSerializer();
-                        });
-                    });
-                    
-                    services.AddQuartzHostedService(opt =>
-                    {
-                        opt.WaitForJobsToComplete = true;
-                    });
-                    services.AddTransient<RepositoryService>();
-                })
-                .Build();
+            var scheduler = await this._schedulerFactory.GetScheduler();
+            await scheduler.TriggerJob(jobKey);
         }
 
-        private async Task<IScheduler> GetScheduler(IHost builder)
+        public async Task<bool> CheckJobStatus(JobKey jobKey)
         {
-            var schedulerFactory = builder.Services.GetRequiredService<ISchedulerFactory>(); 
-            var scheduler = await schedulerFactory.GetScheduler();
-            return scheduler;
-        }
-        
-        private IEnumerable<Type> FindJobs()
-        {
-            var jobType = typeof(CorimaJob);
-            return AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(x => x.GetTypes())
-                .Where(x => jobType.IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract);
-        }
-    }
-    
-    //can be used for logging
-    class JobListener : IJobListener
-    {
-        public Task JobToBeExecuted(IJobExecutionContext context, CancellationToken cancellationToken = new CancellationToken())
-        {
-            Console.WriteLine($"[LOG] Job {context.JobDetail.Key} to be executed");
-            return Task.CompletedTask;
+            return true;
+            //var scheduler = await this._schedulerFactory.GetScheduler();
+            //var jobs = await scheduler.GetCurrentlyExecutingJobs();
+            ////should not be 1st of defualt 
+            //jobs.FirstOrDefault(c=>c.JobDetail.Key == jobKey)
+            //    .Trigger.
         }
 
-        public Task JobExecutionVetoed(IJobExecutionContext context, CancellationToken cancellationToken = new CancellationToken())
-        {
-            Console.WriteLine($"[LOG] Job {context.JobDetail.Key} vetoed");
-            return Task.CompletedTask;
-        }
-
-        public Task JobWasExecuted(IJobExecutionContext context, JobExecutionException jobException,
-            CancellationToken cancellationToken = new CancellationToken())
-        {
-            Console.WriteLine($"[LOG] Job {context.JobDetail.Key} executed");
-            return Task.CompletedTask;
-        }
-
-        public string Name { get; } = "LISTENER";
-    }
-
-    //can be used for logging, for only one-time-running jobs
-    class JobProxy<T> : IJob where T : CorimaJob
-    {
-        private readonly RepositoryService _repositoryService;
-        public JobProxy(RepositoryService repositoryService)
-        {
-            _repositoryService = repositoryService;
-        }
-        
-        public Task Execute(IJobExecutionContext context)
-        {
-            
-            var job = (T)context.JobDetail.JobDataMap.Get("JobInstance");
-            // _repositoryService.Save("JOB STARTED");
-            var result = job.Execute(context);
-            // _repositoryService.Save("JOB ENDED");
-            return result;
-        }
-    }
-    
-    public class CustomSqlServerConnectionProvider : IDbProvider
-    {
-        public CustomSqlServerConnectionProvider()
-        {
-            Metadata = new DbMetadata
-            {
-                AssemblyName = typeof(SqlConnection).AssemblyQualifiedName,
-                BindByName = true,
-                CommandType = typeof(SqlCommand),
-                ConnectionType = typeof(SqlConnection),
-                DbBinaryTypeName = "VarBinary",
-                ExceptionType = typeof(SqlException),
-                ParameterDbType = typeof(SqlDbType),
-                ParameterDbTypePropertyName = "SqlDbType",
-                ParameterNamePrefix = "@",
-                ParameterType = typeof(SqlParameter),
-                UseParameterNamePrefixInParameterCollection = true
-            };
-            Metadata.Init();
-        }
-
-        public void Initialize()
-        {
-        }
-
-        public DbCommand CreateCommand()
-        {
-            return new SqlCommand();
-        }
-
-        public DbConnection CreateConnection()
-        {
-            return new SqlConnection(ConnectionString);
-        }
-
-        public string ConnectionString
-        {
-            get => System.Configuration.ConfigurationManager.ConnectionStrings["MSSQL_ConnectionString"].ConnectionString;
-            set => System.Configuration.ConfigurationManager.ConnectionStrings["MSSQL_ConnectionString"].ConnectionString = value;
-        }
-
-        public DbMetadata Metadata { get; }
-
-        public void Shutdown()
-        {
-        }
+        //public Task GetWaitTask(JobKey key, TimeSpan checkInterval)
+        //{
+        //    return Task.Run(() =>
+        //    {
+        //        while (true)
+        //        {
+        //            return CheckJobStatus == finished
+        //        }
+        //    });
+        //}
     }
 }
