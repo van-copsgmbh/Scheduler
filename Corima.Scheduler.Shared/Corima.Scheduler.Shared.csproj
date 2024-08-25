@@ -43,9 +43,17 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="CorimaJob.cs" />
+        <Compile Include="JobListeners\DependentListener.cs" />
+        <Compile Include="JobListeners\LoggingListener.cs" />
+        <Compile Include="Jobs\CorimaJob.cs" />
+        <Compile Include="Jobs\ICorimaJob.cs" />
+        <Compile Include="Jobs\ManualJob.cs" />
+        <Compile Include="Jobs\SingleRunOnInitJob.cs" />
+        <Compile Include="Jobs\RepeatedJob.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
-        <Compile Include="Triggers.cs" />
+        <Compile Include="Schedulers\IJobScheduler.cs" />
+        <Compile Include="Schedulers\CorimaJobScheduler.cs" />
+        <Compile Include="Triggers\BuiltinTriggers.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
