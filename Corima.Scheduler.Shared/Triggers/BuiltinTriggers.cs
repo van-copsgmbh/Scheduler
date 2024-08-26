@@ -1,8 +1,8 @@
 using Quartz;
 
-namespace Corima.Scheduler.Shared
+namespace Corima.Scheduler.Shared.Triggers
 {
-    public class Triggers
+    public class BuiltinTriggers
     {
         public ITrigger OneTimeTrigger(string name)
         {

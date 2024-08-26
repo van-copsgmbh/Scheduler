@@ -213,9 +213,11 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="DependentJobListener.cs" />
+        <Compile Include="DbProviders\SqlServerConnectionProvider.cs" />
+        <Compile Include="JobProxy.cs" />
         <Compile Include="Jobs.cs" />
-        <Compile Include="JobScheduler.cs" />
+        <Compile Include="JobScheduler_obsolete.cs" />
+        <Compile Include="JobSchedulerInitializer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>

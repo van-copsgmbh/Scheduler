@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Corima.Scheduler;
-using Corima.Scheduler.Shared;
 using Corima.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Quartz;
 using Quartz.Impl;
-using TreasuryBrowser;
+using Quartz.Impl.AdoJobStore;
+using Corima.Scheduler.DbProviders;
+using Corima.Scheduler.Shared.Jobs;
+using Corima.Scheduler.Shared.Schedulers;
 
 namespace Corima
 {
@@ -39,45 +41,71 @@ namespace Corima
             // run JOBNAME, COUNT [-d key=value, key2=value] - run specified job COUNT times
             // run-safe JOBNAME, COUNT [-d key=value, key2=value] - prevent to multiple runs earlier than the scheduled start time
             // run-dependent - run FirstJob and than OneTimeJob
+          
+            IHost host = GetBuilder();
+            var schedulerInitializer = host.Services.GetService<JobSchedulerInitializer>();
+            await schedulerInitializer.Initialize();
+            
+            var jobScheduler = host.Services.GetService<IJobScheduler>();
+            // await jobScheduler.QueueJob()
             
             
-            var services = CreateServices();
-
-            new tb();
-            var scheduler = new JobScheduler(services);
-            scheduler.Init();
-            StdSchedulerFactory.GetDefaultScheduler().Result.Start();
+            // StdSchedulerFactory.GetDefaultScheduler().Result.Start();
 
             string command = "";
             string exitKey = "x";
             while ((command = Console.ReadLine().ToLower()) != exitKey)
             {
-                var cmd = new CommandSelector(scheduler.Scheduler);
+                var cmd = new CommandSelector(schedulerInitializer.Scheduler);
                 await cmd.Run(command);
             }
             Console.ReadLine();
         }
-        
-        private static ServiceProvider CreateServices()
-        {
-            var serviceCollection = new ServiceCollection()
-                .AddSingleton<RepositoryService>()
-                .AddSingleton<MyService>();
 
+        private static IHost GetBuilder()
+        {
+            return Host.CreateDefaultBuilder()
+                .ConfigureServices((cxt, services) =>
+                {
+                    services.AddQuartz(q =>
+                    {
+                        q.UseMicrosoftDependencyInjectionJobFactory();
+                        q.UsePersistentStore(x =>
+                        {
+                            x.UseSqlServer(sql =>
+                            {
+                                sql.ConnectionStringName = "Quartz";
+                                sql.UseDriverDelegate<SqlServerDelegate>();
+                                sql.UseConnectionProvider<SqlServerConnectionProvider>();
+                            }, "MSSQLSQLSERVER");
+                            x.UseProperties = false;
+                            x.UseSystemTextJsonSerializer();
+                        });
+                    });
+                    services.AddQuartzHostedService(opt =>
+                    {
+                        opt.WaitForJobsToComplete = true;
+                    });
+                    services.AddTransient<RepositoryService>();
+                    services.AddSingleton<JobSchedulerInitializer>();
+                    RegisterJobs(services);
+                })
+                .Build();
+        }
+        
+        private static void RegisterJobs(IServiceCollection serviceCollection)
+        {
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
             foreach (var assembly in assemblies)
             {
-                // Najít typy implementující rozhraní IMyService
                 var types = assembly.GetTypes()
-                    .Where(t => typeof(CorimaJob).IsAssignableFrom(t) && !t.IsAbstract);
+                    .Where(t => typeof(ICorimaJob).IsAssignableFrom(t) && !t.IsAbstract);
 
                 foreach (var type in types)
                 {
-                    serviceCollection.AddTransient(type, type);
+                    serviceCollection.AddSingleton(typeof(ICorimaJob), type);
                 }
             }
-            
-            return serviceCollection.BuildServiceProvider();
         }
     }
 }

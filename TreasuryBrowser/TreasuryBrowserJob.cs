@@ -1,23 +1,30 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Corima.Scheduler.Shared;
+using Corima.Scheduler.Shared.Jobs;
 using Quartz;
 
 namespace TreasuryBrowser
 {
     
-    public class TreasuryBrowserJob : CorimaJob
+    public class TreasuryBrowserJob : RepeatedJob
     {
-        public ITrigger Trigger { get; } = new Triggers().RepeatedTrigger("TreasuryBrowserJobTrigger", 20);
-        
-        private static int i = 0;
-        
-        public async Task Execute(IJobExecutionContext context)
+        private int count = 0;
+        public override string JobName { get; } = "TreasuryBrowserJob";
+        public TreasuryBrowserJob() : base(TimeSpan.FromSeconds(5))
         {
-            Console.WriteLine("Treasury browser job running " + i);
-            await Task.Delay(10000);
-            Console.WriteLine("Treasury browser job finished" + i);
-            i++;
+        }
+        
+        protected override Task DoWork(IJobExecutionContext context)
+        {
+            count++;
+            var data = context.MergedJobDataMap;
+            Console.WriteLine($"{JobName} - [{count}]");
+            return Task.CompletedTask;
+        }
+    
+        protected override Task OnError(IJobExecutionContext context, Exception exception)
+        {
+            throw new NotImplementedException();
         }
     }
 }

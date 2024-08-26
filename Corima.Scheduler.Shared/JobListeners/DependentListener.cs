@@ -1,13 +1,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Quartz;
-using Quartz.Impl;
-using Quartz.Impl.Triggers;
 
-namespace Corima.Scheduler
+namespace Corima.Scheduler.Shared.JobListeners
 {
-    public class DependentJobListener : IJobListener
+    public class DependentListener : IJobListener
     {
+        public string Name { get; } = nameof(DependentListener);
         public Task JobToBeExecuted(IJobExecutionContext context, CancellationToken cancellationToken = new CancellationToken())
         {
             return Task.CompletedTask;
@@ -28,7 +27,5 @@ namespace Corima.Scheduler
                 await context.Scheduler.TriggerJob(trigger.JobKey);
             }
         }
-
-        public string Name { get; } = "DependentJobListener";
     }
 }

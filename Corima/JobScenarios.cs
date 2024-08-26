@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Corima.Scheduler;
+using Corima.Scheduler.Shared.JobListeners;
 using Quartz;
 using TreasuryBrowser;
 
@@ -57,7 +58,7 @@ namespace Corima
 
         public async Task RunDependentJobs()
         {
-            _scheduler.ListenerManager.AddJobListener(new DependentJobListener());
+            _scheduler.ListenerManager.AddJobListener(new DependentListener());
             ITrigger trigger = await GetTrigger("FirstJob");
             var map = new JobDataMap { { "nextJobName", "OneTimeJob" } };
             await _scheduler.TriggerJob(trigger.JobKey, map);
